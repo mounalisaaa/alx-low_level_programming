@@ -8,16 +8,16 @@
 int main(void)
 {
 char alphabet_lower = 'a';
-char ALPHABET = 'A';
-while (alphabet <= 'z')
+char alphabet_upper = 'A';
+while (alphabet_lower <= 'z')
 {
-	putchar(alphabet);
-	alphabet++;
+	putchar(alphabet_lower);
+	alphabet_lower++;
 }
-while (ALPHABET <= 'Z')
+while (alphabet_upper <= 'Z')
 {
-	putchar(ALPHABET);
-	ALPHABET++;
+	putchar(alphabet_upper);
+	alphabet_upper++;
 }
 putchar('\n');
 return (0);
