@@ -9,7 +9,7 @@ int main(void)
 {
 	char function[] = "_putchar";
 
-	printf("%s\n", function);
+	_putchar("%s\n", function);
 
 	return (0);
 }
