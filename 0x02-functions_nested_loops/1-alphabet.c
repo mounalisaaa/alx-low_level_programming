@@ -11,14 +11,14 @@ void print_alphabet(void);
 int main(void)
 {
     print_alphabet();
-	putchar('\n');
 	return(0);
 }
-
-void print_alphabet(void){
+void print_alphabet(void)
+{
 	int alphabet;
 	for(alphabet='a';alphabet<= 'z'; alphabet++ )
 	{
-	putchar(alphabet);
+		putchar(alphabet);
 	}
+	putchar('\n');
 }
