@@ -1,0 +1,1 @@
+Debugging is like being a detective in a crime movie where you're also the murderer, but with less action and more coffee.
