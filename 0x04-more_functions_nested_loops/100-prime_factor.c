@@ -10,11 +10,6 @@ int main(void)
 	long int largest_prime_factor = 1;
 	long int factor;
 
-	while (num % 2 == 0)
-	{
-		largest_prime_factor = 2;
-		num /= 2;
-	}
 	for (factor = 3; factor * factor <= num; factor += 2)
 	{
 		while (num % factor == 0)
