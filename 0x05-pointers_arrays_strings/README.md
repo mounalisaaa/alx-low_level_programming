@@ -1,0 +1,1 @@
+Why did the pointer refuse to go to the array party? Because it was afraid of dereferencing itself on the dance floor!
