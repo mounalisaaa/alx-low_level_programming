@@ -6,15 +6,13 @@
  */
 char *string_toupper(char *str)
 {
-	char *ptr = str;
-
-	while (*ptr != '\0')
+	while (str != '\0')
 	{
-		if (*ptr >= 'a' && *ptr <= 'z')
+		if (str >= 'a' && str <= 'z')
 		{
-			*ptr -=  ('a' - 'A');
+			str -=  ('a' - 'A');
 		}
-		ptr++;
+		str++;
 	}
 	return (str);
 }
