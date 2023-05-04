@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * leet - encodes a string into 1337 or leetspeak.
+ *@str: string.
+ * Return: str.
+ */
 char *leet(char *str)
 {
 	char *letters = "aAeEoOtTlL";
