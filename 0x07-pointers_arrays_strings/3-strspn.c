@@ -20,7 +20,7 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
-		if (accept[i] == '\0')
+		if (accept[j] == '\0')
 			break;
 	}
 	return (count);
