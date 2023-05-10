@@ -1,5 +1,5 @@
 #include"main.h"
-int check_polindrome(char *s, int left, int right);
+int check_palindrome(char *s, int left, int right);
 int _strlen_palindrome(char *s);
 /**
  * is_palindrome - function that returns 1 if a string is a palindrome and 0 if not.
@@ -8,7 +8,7 @@ int _strlen_palindrome(char *s);
 */
 int is_palindrome(char *s)
 {
-	return (check_palindrome(s, 0, _strlen_polindrome(s) - 1));
+	return (check_palindrome(s, 0, _strlen_palindrome(s) - 1));
 }
 /**
  * check_polindrome - helper function
@@ -17,7 +17,7 @@ int is_palindrome(char *s)
  * @right: var
  * Return: 0 or 1.
 */
-int check_polindrome(char *s, int left, int right)
+int check_palindrome(char *s, int left, int right)
 {
 	if (left >= right)
 	{
@@ -27,7 +27,7 @@ int check_polindrome(char *s, int left, int right)
 	{
 		return (0);
 	}
-	return (check_polindrome(s, left + 1, right - 1));
+	return (check_palindrome(s, left + 1, right - 1));
 }
 /**
  * _strlen_palindrome - calculate str len 
@@ -41,5 +41,5 @@ int _strlen_palindrome(char *s)
 		return (0);
 	}
 
-	return (1 + _strlen_polindrome(s + 1));
+	return (1 + _strlen_palindrome(s + 1));
 }
