@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-
+/**
+ * main - adds positive numbers.
+ * @argc: int.
+ * @argv: arr to str.
+ * Return: 1 or 0.
+*/
 int main(int argc, char **argv)
 {
 	int num;
