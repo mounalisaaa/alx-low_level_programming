@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	int n, i;
 	int coins[] = {25, 10, 5, 2, 1};
-	int change = 0;
+	int change;
 
 	if (argc != 2)
 	{
@@ -23,11 +23,16 @@ int main(int argc, char *argv[])
 	{
 		printf("0\n");
 	}
+	change = 0;
 	for (i = 0; i < 5; i++)
 	{
-		change += n / coins[i];
-		n %= coins[i];
+		while (n >= coins[i])
+		{
+			n -= coins[i];
+			change++;
+		}
 	}
 	printf("%d\n", change);
+
 	return (0);
 }
