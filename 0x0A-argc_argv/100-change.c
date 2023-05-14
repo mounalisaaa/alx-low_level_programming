@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	if (n < 0)
 	{
 		printf("0\n");
-	}
+	}else{
 	change = 0;
 	for (i = 0; i < 5; i++)
 	{
@@ -33,6 +33,6 @@ int main(int argc, char *argv[])
 		}
 	}
 	printf("%d\n", change);
-
+	}
 	return (0);
 }
