@@ -22,17 +22,19 @@ int main(int argc, char *argv[])
 	if (n < 0)
 	{
 		printf("0\n");
-	}else{
-	change = 0;
-	for (i = 0; i < 5; i++)
-	{
-		while (n >= coins[i])
-		{
-			n -= coins[i];
-			change++;
-		}
 	}
-	printf("%d\n", change);
+	else
+	{
+		change = 0;
+		for (i = 0; i < 5; i++)
+		{
+			while (n >= coins[i])
+			{
+				n -= coins[i];
+				change++;
+			}
+		}
+		printf("%d\n", change);
 	}
 	return (0);
 }
