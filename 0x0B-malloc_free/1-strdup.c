@@ -1,5 +1,3 @@
-#include <stddef.h>
-#include <stdlib.h>
 #include "main.h"
 int _strlen(char *s);
 char *_memcpy(char *dest, char *src, unsigned int n);

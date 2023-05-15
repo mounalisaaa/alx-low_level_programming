@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "main.h"
 /**
  * create_array - unction that creates an array of chars,
