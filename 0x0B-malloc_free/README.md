@@ -1,0 +1,1 @@
+You should always carry a pen and paper so you can malloc() your thoughts and free() your mind.
