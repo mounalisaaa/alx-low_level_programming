@@ -7,11 +7,17 @@ char *_strcpy(char *dest, char *src);
  * @s2: ptr to str.
  * @n: num of bytes concatenated from s2.
  * Return: str or NULL.
-*/
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
 	int len;
+
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
 
 	len = _strlen(s1) + _strlen(s2) + 1;
 
@@ -21,8 +27,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	}
 
-		_strcpy(str, s1);
-		_strncat(str, s2, n);
+	_strcpy(str, s1);
+	_strncat(str, s2, n);
 
 	return (str);
 }
@@ -44,12 +50,12 @@ int _strlen(char *s)
 	return (lenght);
 }
 /**
-  * _strcpy - copys str to another
-  * @dest: destination string
-  * @src: the str that we gonna copy
-  *
-  * Return: the pointer to dst
-  */
+ * _strcpy - copys str to another
+ * @dest: destination string
+ * @src: the str that we gonna copy
+ *
+ * Return: the pointer to dst
+ */
 
 char *_strcpy(char *dest, char *src)
 {
