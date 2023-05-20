@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 int _atoi(char *s);
 int _isdigit(int c);
 int is_numeric(char *str);
@@ -17,12 +18,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3 || !is_numeric(argv[1]) || !is_numeric(argv[2]))
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		write(1, "Error\n", 7);
 		exit(98);
 	}
 	num1 = malloc(sizeof(unsigned int));
@@ -30,12 +26,7 @@ int main(int argc, char **argv)
 	if (num1 == NULL || num2 == NULL)
 
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		write(1, "Error\n", 7);
 		free(num1);
 		free(num2);
 		exit(98);
