@@ -1,6 +1,6 @@
-#include <stdio.h>
 #ifndef MYFILE_H
 #define MYFILE_H
+#include <stdio.h>
 /**
  * main - check the code
  *
