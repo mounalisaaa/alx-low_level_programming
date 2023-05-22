@@ -1,5 +1,7 @@
 #include <stddef.h>
 #include "dog.h"
+int _strlen(char *s);
+char *_memcpy(char *dest, char *src, unsigned int n);
 char *_strdup(char *str);
 /**
  * new_dog - function that creates a new dog.
@@ -34,8 +36,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	return (new_dog);
 }
-int _strlen(char *s);
-char *_memcpy(char *dest, char *src, unsigned int n);
 /**
  * _strdup - duplicate str and returns a ptr to newly allocated str.
  * @str: ptr to be duplicated.
