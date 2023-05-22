@@ -5,7 +5,7 @@
  * @name: 1st element.
  * @age: 2nd element.
  * @owner: 3rd element.
-*/
+ */
 struct dog
 {
 	char *name;
@@ -14,5 +14,6 @@ struct dog
 };
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
+typedef struct dog dog_t;
 
 #endif
