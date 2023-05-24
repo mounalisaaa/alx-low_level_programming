@@ -1,6 +1,4 @@
-#include <unistd.h>
 #include "function_pointers.h"
-int _strlen(char *str);
 /**
  * print_name -  function that prints a name.
  * @name: ptr to str that should be printed.
