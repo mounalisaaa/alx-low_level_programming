@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "function_pointers.h"
 int _strlen(char *str);
 /**
@@ -11,6 +12,7 @@ void print_name(char *name, void (*f)(char *))
 
 	n = _strlen(name);
 	write(1, name, n);
+	
 }
 /**
  *  _strlen -  calculates the length of a string.
@@ -20,11 +22,11 @@ void print_name(char *name, void (*f)(char *))
 
 int _strlen(char *str)
 {
-	int len = 0;
+	int i = 0;
 
 	while (str[i])
 	{
-		i++
+		i++;
 	}
-	return (0);
+	return (i);
 }
