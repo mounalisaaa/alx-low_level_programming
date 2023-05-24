@@ -8,25 +8,5 @@ int _strlen(char *str);
  */
 void print_name(char *name, void (*f)(char *))
 {
-	int n;
-
-	n = _strlen(name);
-	write(1, name, n);
-	
-}
-/**
- *  _strlen -  calculates the length of a string.
- * @str: pointer to a string.
- * Return: lenght.
- */
-
-int _strlen(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
+	f(name);
 }
