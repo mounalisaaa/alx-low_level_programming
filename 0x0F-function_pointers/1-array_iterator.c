@@ -5,7 +5,7 @@
  * @array: array.
  * @size: the size of the array.
  * @action: ptr to the fun.
-*/
+ */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned int i;
