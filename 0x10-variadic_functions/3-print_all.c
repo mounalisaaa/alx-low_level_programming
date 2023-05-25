@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "variadic_functions.h"
-int _strlen(char *s);
+int _strlen(const char *s);
 /**
  * print_all - function that prints anything.
  * @format:  list of types of args.
@@ -8,7 +8,7 @@ int _strlen(char *s);
 void print_all(const char *const format, ...)
 {
 	va_list args;
-	unsigned int bi = 0;
+	int bi = 0;
 
 	va_start(args, format);
 
@@ -37,6 +37,7 @@ void print_all(const char *const format, ...)
 		bi++;
 	}
 	printf("\n");
+	va_end(args);
 }
 /**
  *  _strlen -  calculates the length of a string.
@@ -44,7 +45,7 @@ void print_all(const char *const format, ...)
  * Return: lenght.
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int lenght = 0;
 
