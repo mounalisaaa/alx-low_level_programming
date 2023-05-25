@@ -10,9 +10,9 @@ void print_all(const char *const format, ...)
 	va_list args;
 	int bi = 0;
 	char *s;
+
 	va_start(args, format);
 
-	
 	while (format && format[bi])
 	{
 		switch (format[bi])
