@@ -9,39 +9,41 @@ void print_all(const char *const format, ...)
 {
 	va_list args;
 	int bi = 0;
-	char *s;
+	char *s, *sep = "";
 	va_start(args, format);
 
-	while (format[bi])
+	if (format)
 	{
-		switch (format[bi])
+		while (format[bi])
 		{
-		case 'c':
-			printf("%c", va_arg(args, int));
-			break;
-		case 'i':
-			printf("%d", va_arg(args, int));
-			break;
-		case 'f':
-			printf("%f", va_arg(args, double));
-			break;
-		case 's':
-			s = (va_arg(args, char *));
-			if (s == NULL)
-				s = "(nil)";
+			switch (format[bi])
+			{
+			case 'c':
+				printf("%s%c", sep, va_arg(args, int));
+				break;
+			case 'i':
+				printf("%s%d", sep, va_arg(args, int));
+				break;
+			case 'f':
+				printf("%s%f", sep, va_arg(args, double));
+				break;
+			case 's':
+				s = (va_arg(args, char *));
+				if (s == NULL)
+					s = "(nil)";
 
-			printf("%s", s);
-			break;
-		default:
+				printf("%s%s", sep, s);
+				break;
+			default:
+				bi++;
+				continue;
+			}
+			sep = ", ";
 			bi++;
-			continue;
 		}
-		if (bi != _strlen(format) - 1)
-			printf(", ");
-		bi++;
+		printf("\n");
+		va_end(args);
 	}
-	printf("\n");
-	va_end(args);
 }
 /**
  *  _strlen -  calculates the length of a string.
