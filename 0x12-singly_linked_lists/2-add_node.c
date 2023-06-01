@@ -1,6 +1,4 @@
 #include "lists.h"
-#include <string.h>
-int _strlen(const char *str);
 /**
  *add_node- adds a new node as the 1st node.
  * @head: ptr to a ptr to list_t
