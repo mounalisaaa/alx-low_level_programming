@@ -4,7 +4,7 @@
  * print_list - prints all the elements of a list_t list.
  * @h: pointer to 1st node.
  * Return: the number of node.
-*/
+ */
 size_t print_list(const list_t *h)
 {
 	const list_t *current = h;
@@ -12,18 +12,18 @@ size_t print_list(const list_t *h)
 	unsigned int len = current->len;
 	int count = 0;
 
-	if (!str)
+	if (current)
 	{
-		printf("[0] (nil)\n");
-		count++;
-		printf("[%d] %s\n", len, h->next->str);
-		count++;
-	}
-
-	if (current && str)
-	{
-		printf("[%d] %s\n", len, str);
-		count++;
+		if (str)
+		{
+			printf("[%d] %s\n", len, str);
+			count++;
+		}
+		else
+		{
+			printf("[0] (nil)\n");
+			count++;
+		}
 		printf("[%d] %s\n", len, h->next->str);
 		count++;
 	}
