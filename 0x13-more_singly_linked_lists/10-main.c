@@ -23,7 +23,7 @@ int main(void)
     add_nodeint_end(&head, 1024);
     print_listint(head);
     printf("-----------------\n");
-    delete_nodeint_at_index(&head, 5);
+    delete_nodeint_at_index(&head, 8);
     print_listint(head);
     printf("-----------------\n");
     delete_nodeint_at_index(&head, 0);
