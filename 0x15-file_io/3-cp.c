@@ -1,0 +1,64 @@
+#include "main.h"
+void _close(int fd);
+void cp_file(const char *file_from, const char *file_to);
+/**
+ * main - main fuunction
+ * @argc: count of args.
+ * @argv: string of args
+ * Return: 0.
+ */
+int main(int argc, char **argv)
+{
+
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+	cp_file(argv[1], argv[2]);
+	return (0);
+}
+/**
+ * cp_file - copy the contant of argv[1] to argv[2].
+ * @file_from: argv[1].
+ * @file_to: argv[2].
+ */
+void cp_file(const char *file_from, const char *file_to)
+{
+	int to, from;
+	ssize_t written, readd;
+	char *buffer;
+
+	to = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
+	from = open(file_from, O_RDONLY);
+	buffer = malloc(sizeof(char *) * 1024);
+	readd = read(from, buffer, 1024);
+	written = write(to, buffer, readd);
+
+	if (from == -1 || readd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		exit(97);
+	}
+	if (to == -1 || !buffer || written == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+		exit(99);
+	}
+	free(buffer);
+	_close(to);
+	_close(from);
+}
+/**
+ * _close - close();
+ * @fd: file descriptor.
+ */
+void _close(int fd)
+{
+	/*close(fd);*/
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
