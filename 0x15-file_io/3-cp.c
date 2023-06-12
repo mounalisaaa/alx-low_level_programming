@@ -38,12 +38,10 @@ void cp_file(const char *file_from, const char *file_to)
 		exit(99);
 	}
 	readd = read(from, buffer, 1024);
-	do
-	{
+	do {
 		if (from == -1 || readd == -1)
 		{
-			dprintf(STDERR_FILENO,
-					"Error: Can't read from file %s\n", file_from);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			free(buffer);
 			exit(98);
 		}
@@ -51,8 +49,7 @@ void cp_file(const char *file_from, const char *file_to)
 		written = write(to, buffer, readd);
 		if (to == -1 || written == -1)
 		{
-			dprintf(STDERR_FILENO,
-					"Error: Can't write to %s\n", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			free(buffer);
 			exit(99);
 		}
