@@ -29,18 +29,26 @@ void cp_file(const char *file_from, const char *file_to)
 	ssize_t written, readd;
 	char *buffer;
 
-	to = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
 	from = open(file_from, O_RDONLY);
+	to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	buffer = malloc(sizeof(char *) * 1024);
+	if (!buffer)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+		exit(99);
+	}
 	readd = read(from, buffer, 1024);
-	written = write(to, buffer, readd);
+	while (readd > 0)
+	{
+		written = write(to, buffer, readd);
+	}
 
 	if (from == -1 || readd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(97);
+		exit(98);
 	}
-	if (to == -1 || !buffer || written == -1)
+	if (to == -1 || written == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
