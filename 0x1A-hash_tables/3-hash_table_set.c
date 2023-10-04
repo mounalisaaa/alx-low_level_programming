@@ -55,7 +55,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		temp = ht->array[key_idx];
 		while (temp)
 		{
-			if (!_strcmp(temp->key, item->value))
+			if (!_strcmp(temp->key, item->key))
 			{
 				free(temp->value);
 				temp->value = item->value;
