@@ -21,6 +21,16 @@ char *_strdup(const char *s)
 	return (new);
 }
 
+int _strcmp(char *s1, char *s2)
+{
+	int i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
+}
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int key_idx;
@@ -43,6 +53,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		temp = ht->array[key_idx];
+		while (temp)
+		{
+			if (!_strcmp(temp->key, item->value))
+			{
+				free(temp->value);
+				temp->value = item->value;
+				free(item->key);
+				free(item);
+			}
+			temp = temp->next;
+		}
 		ht->array[key_idx] = item;
 		item->next = temp;
 	}
