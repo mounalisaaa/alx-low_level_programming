@@ -65,6 +65,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			}
 			temp = temp->next;
 		}
+		temp = ht->array[key_idx];
 		ht->array[key_idx] = item;
 		item->next = temp;
 	}
